@@ -9,11 +9,11 @@ describe('Our first test', () => {
 });
 
 describe('DOM test', () => {
-    it('should return \'Hello World!\'', (done) => {
+    it('should return H1 innerHTML', (done) => {
         const file = fs.readFileSync('./src/index.html', 'utf-8');
         jsdom.env(file, (err, window) => {
             const h1 = window.document.getElementsByTagName('h1')[0];
-            expect(h1.innerHTML).to.equal('Hello World!');
+            expect(h1.innerHTML).to.equal('Users');
             done();
             window.close();
         });
